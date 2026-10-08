@@ -25,7 +25,7 @@ public class AppointmentDto {
         return appointmentDate;
     }
 
-    public void setAppointmentDate(LocalDate appointmentDate) {   // ← LocalDate ici
+    public void setAppointmentDate(LocalDate appointmentDate) {   
         this.appointmentDate = appointmentDate;
     }
 
