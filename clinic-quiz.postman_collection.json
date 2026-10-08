@@ -1,0 +1,274 @@
+{
+  "info": {
+    "_postman_id": "9d3b8e848ce376dc5f5b504f",
+    "name": "Clinic_Quiz",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "A1 - Patients by last name",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8084/api/patients/by-last-name?lastName=uwase",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8084",
+          "path": [
+            "api",
+            "patients",
+            "by-last-name"
+          ],
+          "query": [
+            {
+              "key": "lastName",
+              "value": "uwase"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A2-Appointments by status",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8084/api/appointments/by-status?status=CONFIRMED",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8084",
+          "path": [
+            "api",
+            "appointments",
+            "by-status"
+          ],
+          "query": [
+            {
+              "key": "status",
+              "value": "CONFIRMED"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "A3-Appointments between dates",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8084/api/appointments/between?start=2026-10-01&end=2026-10-31",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8084",
+          "path": [
+            "api",
+            "appointments",
+            "between"
+          ],
+          "query": [
+            {
+              "key": "start",
+              "value": "2026-10-01"
+            },
+            {
+              "key": "end",
+              "value": "2026-10-31"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "B1-Doctors by specialization",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8084/api/doctors/aadc240d-f691-4f30-927c-da3f06d9c47e",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8084",
+          "path": [
+            "api",
+            "doctors",
+            "aadc240d-f691-4f30-927c-da3f06d9c47e"
+          ],
+          "query": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"firstName\": \"Jean\",\n  \"lastName\": \"Mugisha\",\n  \"dateOfBirth\": \"1980-05-10\",\n  \"specializations\": [\n    {\n      \"id\": \"ID_CARDIOLOGY\"\n    },\n    {\n      \"id\": \"ID_PEDIATRICS\"\n    }\n  ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "B2-Doctors without office",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8084/api/doctors/aadc240d-f691-4f30-927c-da3f06d9c47e",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8084",
+          "path": [
+            "api",
+            "doctors",
+            "aadc240d-f691-4f30-927c-da3f06d9c47e"
+          ],
+          "query": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"firstName\": \"Jean\",\n  \"lastName\": \"Mugisha\",\n  \"dateOfBirth\": \"1980-05-10\",\n  \"office\": {\n    \"id\": \"cf642b48-9d67-4b70-9fb0-9dd8cd20c385\"\n  },\n  \"specializations\": [\n    {\n      \"id\": \"894f4a82-8b6f-4ecd-aea3-bd9513c6191a\"\n    },\n    {\n      \"id\": \"954ab50c-a5d7-4999-ab1b-c020692c6106\"\n    }\n  ]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "B3-Unuses specializations",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8084/api/specializations/unused",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8084",
+          "path": [
+            "api",
+            "specializations",
+            "unused"
+          ],
+          "query": []
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "C1-Appointments count by status",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8084/api/appointments/status/by-status",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8084",
+          "path": [
+            "api",
+            "appointments",
+            "status",
+            "by-status"
+          ],
+          "query": []
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "C2-Frequent patients",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8084/api/patients/frequent?min=3",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8084",
+          "path": [
+            "api",
+            "patients",
+            "frequent"
+          ],
+          "query": [
+            {
+              "key": "min",
+              "value": "3"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "C3-Busiest office",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8084/api/doctors/aadc240d-f691-4f30-927c-da3f06d9c47e",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8084",
+          "path": [
+            "api",
+            "doctors",
+            "aadc240d-f691-4f30-927c-da3f06d9c47e"
+          ],
+          "query": []
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"firstName\": \"Jean\",\n  \"lastName\": \"Mugisha\",\n  \"dateOfBirth\": \"1980-05-10\",\n  \"office\": {\n    \"id\": \"cf642b48-9d67-4b70-9fb0-9dd8cd20c385\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      },
+      "response": []
+    }
+  ]
+}
